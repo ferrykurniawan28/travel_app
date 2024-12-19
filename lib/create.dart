@@ -165,7 +165,23 @@ class _CreatePlaceScreenState extends State<CreatePlaceScreen> {
                             ),
                           ],
                         )
-                      : Image.file(_image!),
+                      : Stack(
+                          children: [
+                            Image.file(_image!),
+                            Positioned(
+                              top: 10,
+                              right: 10,
+                              child: IconButton(
+                                icon: const Icon(Icons.close),
+                                onPressed: () {
+                                  setState(() {
+                                    _image = null;
+                                  });
+                                },
+                              ),
+                            ),
+                          ],
+                        ),
                 ),
                 const SizedBox(height: 20),
                 if (_isloading) const CircularProgressIndicator(),
