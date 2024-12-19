@@ -16,22 +16,30 @@ class ViewPlace extends StatelessWidget {
       appBar: AppBar(
         title: const Text('View Place'),
       ),
-      body: Column(
+      body: ListView(
         children: [
           Image.network(imageUrl),
           const SizedBox(height: 10),
-          Text(
-            placeName,
-            style: const TextStyle(
-              fontSize: 20,
-              fontWeight: FontWeight.bold,
+          Center(
+            child: Text(
+              placeName,
+              style: const TextStyle(
+                fontSize: 20,
+                fontWeight: FontWeight.bold,
+              ),
             ),
           ),
           const SizedBox(height: 10),
-          Text(
-            description,
-            style: const TextStyle(
-              fontSize: 16,
+          Flexible(
+            child: Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 16),
+              child: Text(
+                description,
+                style: const TextStyle(
+                  fontSize: 16,
+                ),
+                textAlign: TextAlign.justify,
+              ),
             ),
           ),
         ],

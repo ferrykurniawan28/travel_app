@@ -80,15 +80,17 @@ class _HomeState extends State<Home> {
       body: places.isEmpty
           ? RefreshIndicator(
               onRefresh: refresh,
-              child: const SingleChildScrollView(
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: [
-                    Center(
-                      child: Text('No places added yet'),
-                    ),
-                  ],
+              child: SingleChildScrollView(
+                child: Container(
+                  alignment: Alignment.center,
+                  height: MediaQuery.of(context).size.height,
+                  child: const Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      Text('No places added yet'),
+                    ],
+                  ),
                 ),
               ),
             )
